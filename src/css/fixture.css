@@ -1,0 +1,13 @@
+.fixture {
+    text-align: center;
+}
+
+.fixture li {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fixture li div {
+    font-size: 15px;
+    font-weight: normal;
+}
