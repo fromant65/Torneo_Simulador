@@ -3,7 +3,7 @@ import "./css/App.css";
 import Equipo from "./classes/Equipo";
 import FechasVisual from "./components/FechasVisual";
 import ListaEquipos from "./components/ListaEquipos";
-
+import CambiarNombres from "./components/CambiarNombres";
 function App() {
   const [cantEquipos, setCantEquipos] = useState(0);
   const [cantEquiposInput, setCantEquiposInput] = useState(0);
@@ -11,6 +11,7 @@ function App() {
   const [fechas, setFechas] = useState([]);
   const [fechasVisual, setFechasVisual] = useState([]);
   const [nroFecha, setNroFecha] = useState(0);
+  const [isModifyingName, setIsModifyingName] = useState(false);
   useEffect(() => {
     document.getElementById("jugar-fecha").disabled = true;
   }, []);
@@ -29,6 +30,20 @@ function App() {
     }
     setListaEquipos(equipos);
   };
+
+  useEffect(() => {
+    //console.log("cambia");
+    setFechasVisual(
+      fechas.map((fecha) => {
+        return fecha.map((partido) => {
+          return [
+            listaEquipos.find((equipo) => equipo.id === partido[0]).nombre,
+            listaEquipos.find((equipo) => equipo.id === partido[1]).nombre,
+          ];
+        });
+      })
+    );
+  }, [listaEquipos]);
 
   const generarFechas = (equipos) => {
     const fechas = [];
@@ -152,15 +167,35 @@ function App() {
           Aceptar
         </button>
       </form>
-      <button onClick={handleFecha} id="jugar-fecha">
-        Jugar fecha {nroFecha + 1}
-      </button>
+      <div className="nombres-fechas">
+        <button
+          className="cambiar-nombres"
+          onClick={() => {
+            setIsModifyingName(!isModifyingName);
+          }}
+        >
+          Cambiar nombres
+        </button>
+        <button onClick={handleFecha} id="jugar-fecha">
+          Jugar fecha {nroFecha + 1}
+        </button>
+      </div>
+
       <ListaEquipos
         listaEquipos={listaEquipos}
         setListaEquipos={setListaEquipos}
       />
 
       <FechasVisual fechasVisual={fechasVisual} />
+      {isModifyingName ? (
+        <CambiarNombres
+          listaEquipos={listaEquipos}
+          setListaEquipos={setListaEquipos}
+          setIsModifyingName={setIsModifyingName}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

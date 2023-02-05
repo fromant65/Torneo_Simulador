@@ -1,0 +1,49 @@
+.cambiar-nombres-container {
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    left: 0;
+    background-color: rgba(200, 200, 200, 0.8);
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+}
+
+.cambiar-nombres-container h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.confirmar-nombres {
+    width: 200px;
+    margin: 20px auto;
+}
+
+.cambiar-nombres-container div,
+.confirmar-nombres {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.cambiar-nombres-container div {
+    padding: 10px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.cambiar-nombres-container div:nth-child(even) {
+    background-color: #eee;
+}
+
+.cambiar-nombres-container div:nth-child(odd) {
+    background-color: #ddd;
+}
+
+.cambiar-nombres-container div:focus {
+    outline: none;
+    background-color: #fff;
+}

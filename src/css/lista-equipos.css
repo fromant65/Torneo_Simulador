@@ -1,10 +1,20 @@
 #lista-equipos {
     border: 1px solid #ddd;
     padding: 0;
+    max-width: 600px;
+    margin: auto;
 }
 
 .datos-equipo:nth-child(odd) {
     background-color: #eee;
+}
+
+.datos-equipo:nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 
 .datos-equipo {
@@ -12,7 +22,7 @@
     margin: 0 !important;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 3fr) repeat(3, 1fr) 2fr 2fr;
+    grid-template-columns: 2fr 2fr repeat(4, 1fr);
 }
 
 

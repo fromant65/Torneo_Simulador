@@ -1,13 +1,35 @@
 .fixture {
     text-align: center;
+
 }
 
 .fixture li {
-    font-size: 20px;
-    font-weight: bold;
+    max-width: 600px;
+    margin: auto;
+    outline: 1px solid #ddd;
+    margin: 20px auto;
 }
 
-.fixture li div {
+.fixture li::marker {
+    content: "";
+}
+
+.fixture li .fecha-partido {
     font-size: 15px;
-    font-weight: normal;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.fixture li .fecha-partido:nth-child(even) {
+    background-color: #eee;
+}
+
+.fixture li .fecha-partido:nth-child(odd) {
+    background-color: #fff;
+}
+
+.fecha-label {
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
 }

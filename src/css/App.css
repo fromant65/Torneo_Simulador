@@ -1,10 +1,19 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+
 .app-form {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .app-form input {
   border: 1px solid #ddd;
   border-radius: 10px;
+  width: 200px;
   padding: 10px;
 }
 
@@ -13,9 +22,15 @@
   border: 1px solid #aaa;
 }
 
+.nombres-fechas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cambiar-nombres,
+#jugar-fecha,
 .app-form input,
-.app-form button,
-#jugar-fecha {
-  display: block;
-  margin: 10px auto !important;
+.app-form button {
+  margin: 10px;
 }
