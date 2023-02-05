@@ -19,24 +19,3 @@
   display: block;
   margin: 10px auto !important;
 }
-
-.datos-equipo {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 3fr) repeat(3, 1fr) 2fr 2fr;
-}
-
-.datos-equipo div {
-  outline: 1px solid #ddd;
-  text-align: center;
-}
-
-.nombre-equipo,
-.fuerza-equipo,
-.puntos-equipo,
-.partidos-equipo {
-
-  display: inline-block;
-}
